@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Width="1200"
+        Height="450"
+        x:Class="up.ProductsAddWindow"
+        Title="Добавить новый продукт">
+    <Grid>
+        <UniformGrid Columns="2">
+            <TextBlock Text="Название товара:"/>
+            <TextBox x:Name="txtName" Margin="5" Width="250" x:CompileBindings="False" Text="{Binding Name}"/>
+            <TextBlock Text="Категория:"/>
+            <ComboBox x:Name="cmbKategory" Margin="5" Width="250" x:CompileBindings="False" SelectedItem="{Binding Kategory}" DisplayMemberBinding="{Binding Name}"/>
+            <TextBlock Text="Цвет:"/>
+             <ComboBox x:Name="cmbColor" Margin="5" Width="250" x:CompileBindings="False" SelectedItem="{Binding Color}" DisplayMemberBinding="{Binding Name}"/>
+            <TextBlock Text="Память:"/>
+             <ComboBox x:Name="cmbStorage" Margin="5" Width="250" x:CompileBindings="False" SelectedItem="{Binding Storage}" DisplayMemberBinding="{Binding Name}"/>
+            <TextBlock Text="Гарантия:"/>
+            <TextBox x:Name="txtGarantiya" Margin="5" Width="250" x:CompileBindings="False" Text="{Binding Garantiya}"/>
+            <TextBlock Text="Цена:"/>
+            <TextBox x:Name="txtPrice" Margin="5" Width="250" x:CompileBindings="False" Text="{Binding Price}"/>
+            <Button x:Name="btnSave" Click="btnSave_Click" Content="Сохранить"/>
+            <Button x:Name="btnBack" Click="btnBack_Click" Content="Назад"/>
+        </UniformGrid>
+    </Grid>
+</Window>
