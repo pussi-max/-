@@ -1,0 +1,50 @@
+create table users(
+	id serial primary key,
+	login varchar(20),
+	password text
+);
+create table kategories(
+	id serial primary key,
+	name varchar(50)
+);
+create table colors(
+	id serial primary key,
+	name varchar(50)
+);
+create table storages(
+	id serial primary key,
+	name varchar(50)
+);
+create table products(
+	id serial primary key,
+	name varchar(50),
+	id_kategory int references kategories(id),
+	id_color int references colors(id),
+	id_storage int references storages(id),
+	garantiya varchar(50),
+	price int
+);
+create table orders(
+	id serial primary key,
+	id_product int references products(id)
+);
+create table klients(
+	id serial primary key,
+	name varchar(50),
+	number varchar(50)
+);
+create table sotrudniki(
+	id serial primary key,
+	name varchar(50),
+	number varchar(50),
+	stage varchar(50),
+	dolgnost varchar(50)
+);
+create table orders_klients(
+	id serial primary key,
+	id_order int references orders(id),
+	id_klient int references klients(id),
+	id_sotrudnik int references sotrudniki(id),
+	sposob_polucheniya varchar(50),
+	sum varchar(50)
+);
